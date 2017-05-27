@@ -4,10 +4,12 @@ def linea(xinicial,yinicial,xfinal,yfinal,turtle):
     lista=[]
     turtle.goto(xinicial,yinicial)
     turtle.pendown()
+    res = 0.05
+    
     while s <=1:
         turtle.goto(xinicial+s*(xfinal-xinicial),yinicial+s*(yfinal-yinicial))
         lista.extend((turtle.xcor(),turtle.ycor(),1))
-        s +=0.05#si queremos una mejor resolucion usamos un numero menor
+        s +=res#si queremos una mejor resolucion usamos un numero menor
     turtle.penup()
     return lista
 
@@ -371,7 +373,7 @@ def N(pt,posx,posy,turtle):
     lista.extend(linea(posx,posy-l,posx,posy,turtle)) #escribe el palo | de abajo arriba
     lista.extend(linea(posx,posy,posx+w,posy-l,turtle)) #Escribe diagonal \
     lista.extend(linea(posx+w,posy-l,posx+w,posy,turtle))#Escribe palo de abajo arriba
-    print 'M'
+    print 'N'
     return lista
 
 def O(pt,posx,posy,turtle):
@@ -562,4 +564,19 @@ def Z(pt,posx,posy,turtle):
     lista.extend(noescribir(posx+w,posy-l,posx+w,posy,turtle))#va a la posicion final
 
     print 'Z'
+    return lista
+
+def uno(pt,posx,posy,turtle):
+    lamb=0.25
+    turtle.penup()
+    l=pt
+    w=lamb*pt
+    lista=[]
+
+    lista.extend(noescribir(posx,posy,posx,posy-(l/4),turtle))
+    lista.extend(linea(posx,posy-(l/4),posx+w,posy,turtle))
+    lista.extend(linea(posx+w,posy,posx-w,posy-l,turtle))
+    lista.extend(noescribir(posx+w,posy-l,posx+w,posy,turtle))
+
+    print '1'
     return lista

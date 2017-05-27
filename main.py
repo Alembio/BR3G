@@ -1,7 +1,7 @@
 import turtle
 from math import *
 from library import *
-#from writer import *
+import os.path
 
 #crear unna tortuga llamada turtle
 turtle=turtle
@@ -12,14 +12,16 @@ turtle.ht()
 #Velocidad 1 min 10 max
 turtle.speed(9)
 
+direccion="/Users/rafaella/Documents/Interfaz_VLI/"
+filename="probando.txt"
 #abrir el file a leer y llamarlo f
-f=open("/Users/rafaella/Documents/Interfaz VLI/probando.txt","r")
+f=open(direccion + filename,"r")
 #guardar en s el string de todo el file
 s=f.read()
 
-pt=30
-posx= -50
-posy= 100
+pt=40
+posx= -250
+posy= 200
 margenIzq= 300
 margenInf=- 250
 out=[]
@@ -41,6 +43,8 @@ for count in range(len(s)):
         x='space'
     elif x=='\n':
         x='backslash'
+    elif x=='1':
+        x='one';
 
     if posx<margenIzq:
 
@@ -72,8 +76,17 @@ for count in range(len(s)):
 print out
 print len(out)
 
+nombre=os.path.splitext(filename)[0]
+print nombre
+
 canvas=turtle.getscreen()
-canvas.getcanvas().postscript(file="duck.eps")
+canvas.getcanvas().postscript(file= nombre + "_img.eps")
+
+nomdenuevo= nombre + "_puntos.txt"
+
+nuevo=open(direccion + nomdenuevo,"w")
+nuevo.write(",".join(str(x) for x in out))
+nuevo.close()
 
 #sim()
 
