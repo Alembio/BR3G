@@ -2,6 +2,9 @@ import turtle
 from math import *
 from library import *
 import os.path
+import sys
+
+phpfile = sys.argv[1]
 
 #crear unna tortuga llamada turtle
 turtle=turtle
@@ -12,8 +15,8 @@ turtle.ht()
 #Velocidad 1 min 10 max
 turtle.speed(10)
 
-direccion="/Users/rafaella/Documents/Interfaz_VLI/"
-filename="probando.txt"
+direccion="C:/wamp64/www/Python/"
+filename= phpfile
 #abrir el file a leer y llamarlo f
 f=open(direccion + filename,"r")
 #guardar en s el string de todo el file
