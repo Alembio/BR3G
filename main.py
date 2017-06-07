@@ -10,7 +10,7 @@ turtle=turtle
 turtle.ht()
 
 #Velocidad 1 min 10 max
-turtle.speed(9)
+turtle.speed(10)
 
 direccion="/Users/rafaella/Documents/Interfaz_VLI/"
 filename="probando.txt"
@@ -19,7 +19,7 @@ f=open(direccion + filename,"r")
 #guardar en s el string de todo el file
 s=f.read()
 
-pt=40
+pt=30
 posx= -250
 posy= 200
 margenIzq= 300
@@ -85,7 +85,7 @@ canvas.getcanvas().postscript(file= nombre + "_img.eps")
 nomdenuevo= nombre + "_puntos.txt"
 
 nuevo=open(direccion + nomdenuevo,"w")
-nuevo.write(",".join(str(x) for x in out))
+nuevo.write(" ".join(str(x) for x in out))
 nuevo.close()
 
 #sim()
