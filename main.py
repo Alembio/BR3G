@@ -13,8 +13,8 @@ turtle.ht()
 #Velocidad 1 min 10 max
 turtle.speed(10)
 
-direccion="C:/wamp64/www/pruebas/"
-filename= "prueba.txt"
+direccion= #Dirección
+filename= #Archivo txt
 #abrir el file a leer y llamarlo f
 f=open(direccion + filename,"r")
 #guardar en s el string de todo el file
