@@ -4,8 +4,6 @@ from library import *
 import os.path
 import sys
 
-phpfile = sys.argv[1]
-
 #crear unna tortuga llamada turtle
 turtle=turtle
 
@@ -15,8 +13,8 @@ turtle.ht()
 #Velocidad 1 min 10 max
 turtle.speed(10)
 
-direccion="C:/wamp64/www/Python/"
-filename= phpfile
+direccion="C:/wamp64/www/pruebas/"
+filename= "prueba.txt"
 #abrir el file a leer y llamarlo f
 f=open(direccion + filename,"r")
 #guardar en s el string de todo el file
@@ -76,18 +74,16 @@ for count in range(len(s)):
         print 'Se llego al maximo de la pagina'
         break
 
-print out
-print len(out)
-
 nombre=os.path.splitext(filename)[0]
-print nombre
 
+direccion2 = "C:/wamp64/www/pruebas/"
 canvas=turtle.getscreen()
-canvas.getcanvas().postscript(file= nombre + "_img.eps")
+canvas.getcanvas().postscript(file= direccion2 + nombre + "_img.eps")
 
 nomdenuevo= nombre + "_puntos.txt"
 
-nuevo=open(direccion + nomdenuevo,"w")
+direccion3 = "C:/wamp64/www/pruebas/"
+nuevo=open(direccion3 + nomdenuevo,"w")
 nuevo.write(" ".join(str(x) for x in out))
 nuevo.close()
 
